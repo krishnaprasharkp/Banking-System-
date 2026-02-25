@@ -2,9 +2,9 @@
 #include <fstream>
 #include <sstream>
 #include <cstdio>
-#include <cstdlib> // for rand() and srand() and system("cls")
-#include <ctime>   // for time()
-#include <set>     // for std::set to track unique account numbers
+#include <cstdlib> 
+#include <ctime>   
+#include <set>     
 #include <string>
 #include<windows.h>
 #include<limits>
@@ -412,25 +412,25 @@ public:
             cout << "Sorry, cannot fetch your receipt :( " << endl;
         }
 
-        // Open the file to read only the last receipt
+        
         ifstream in(recieptFile);
         if (in.is_open())
         {
             string st, lastReceipt = "";
             string delimiter = "            SHAMPI BANK OF INDIA            ";
 
-            // Read through the file and capture the last receipt
+            
             while (getline(in, st))
             {
                 if (st.find(delimiter) != string::npos)
                 {
-                    lastReceipt = ""; // Start capturing from the last delimiter
+                    lastReceipt = ""; 
                 }
                 lastReceipt += st + "\n"; // Accumulate the lines of the last receipt
             }
             in.close();
 
-            // Display the last receipt
+            // Display last receipt
             cout << "\n--------------RECEIPT--------------" << endl;
             cout << lastReceipt;
             cout << "--------------RECEIPT--------------" << endl;
@@ -1132,4 +1132,5 @@ int main()
         }
     }
     return 0;
+
 }
